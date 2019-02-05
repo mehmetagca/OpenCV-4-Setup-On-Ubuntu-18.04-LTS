@@ -1,0 +1,44 @@
+#Update & Upgrade
+sudo apt-get update
+sudo apt-get upgrade
+
+#Install Compiler
+sudo apt-get install build-essential
+
+#Required Dependency
+sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+
+#Optional
+sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+
+#Clone git repository
+cd ~
+mkdir OpenCV
+cd OpenCV
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+
+#Create build folder
+cd opencv
+mkdir build
+cd build
+
+#Configure CMake
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D INSTALL_C_EXAMPLES=ON \
+      -D INSTALL_PYTHON_EXAMPLES=ON \
+      -D WITH_TBB=ON \
+      -D WITH_V4L=ON \
+      -D OPENCV_PYTHON3_INSTALL_PATH = <path to python in your computer>
+        -D WITH_QT=ON \
+        -D WITH_OPENGL=ON \
+        -D OPENCV_EXTRA_MODULES_PATH=~/OpenCV/opencv_contrib/modules \
+        -D BUILD_EXAMPLES=ON ..
+        
+#Build & Install
+make -j8 # runs 8 jobs in parallel(8 Threads), Do "-j4" if your computer has 2 cores 4 threads.
+sudo make install
+
+#Finish
+#You can start coding C++ or Python
