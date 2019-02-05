@@ -23,7 +23,24 @@ git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
 
 
+#Python Setup
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
+sudo pip install virtualenv virtualenvwrapper
+sudo rm -rf ~/get-pip.py ~/.cache/pip
+echo -e "\n# virtualenv and virtualenvwrapper" >> ~/.bashrc
+echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
+echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.bashrc
+echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+source ~/.bashrc
+mkvirtualenv cv -p python3
+workon cv
+pip install numpy
+#press Ctrl+D to exit from workon cv
+
+
 #Create build folder
+workon cv
 cd opencv
 mkdir build
 cd build
@@ -48,13 +65,34 @@ make -j8 # runs 8 jobs in parallel(8 Threads), Do "-j4" if your computer has 2 c
 sudo make install
 
 
+#Python & OpenCV Configure
+cd /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.so
+mv /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.so cv2.so
+cd ~/.virtualenvs/cv/lib/python3.6/site-packages/
+ln -s /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.so cv2.so
+
+
 #Test1 (Optional)
-pkg-config --modversion opencv
-4.0.x
-#It is OK.
+cd ~
+workon cv
+python
+# Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+# [GCC 8.2.0] on linux
+# Type "help", "copyright", "credits" or "license" for more information.
+# >>> 
+import cv2
+cv2.__version__
+#'4.0.1-dev'
+#It is OK. Press Ctrl+D to exit python.
 
 
 #Test2 (Optional)
+pkg-config --modversion opencv
+3.2.0
+#Do not worry, you will see version 4.0.1 on python coding. It is OK.
+
+
+#Test3 (Optional)
 cd ~/OpenCV/opencv/build/bin
 ./opencv_test_core
 #Running test, it may take long time, if you want to cancel, Press Ctrl+C.
