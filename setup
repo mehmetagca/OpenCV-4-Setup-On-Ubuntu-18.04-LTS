@@ -36,7 +36,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D INSTALL_PYTHON_EXAMPLES=ON \
       -D WITH_TBB=ON \
       -D WITH_V4L=ON \
-      -D OPENCV_PYTHON3_INSTALL_PATH = <path to python in your computer>
+      -D OPENCV_PYTHON3_INSTALL_PATH = <path to python in your computer> #If you do not know, you can delete this line.
         -D WITH_QT=ON \
         -D WITH_OPENGL=ON \
         -D OPENCV_EXTRA_MODULES_PATH=~/OpenCV/opencv_contrib/modules \
@@ -48,7 +48,13 @@ make -j8 # runs 8 jobs in parallel(8 Threads), Do "-j4" if your computer has 2 c
 sudo make install
 
 
-#Test (Optional)
+#Test1 (Optional)
+pkg-config --modversion opencv
+3.2.0
+#It is OK.
+
+
+#Test2 (Optional)
 cd ~/OpenCV/opencv/build/bin
 ./opencv_test_core
 #Running test, it may take long time, if you want to cancel, Press Ctrl+C.
