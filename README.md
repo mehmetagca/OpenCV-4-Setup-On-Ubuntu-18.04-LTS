@@ -89,7 +89,9 @@ ln -s /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.so cv2.so
 ```
 **My screenshoot**
 
-![bashrc](https://user-images.githubusercontent.com/27829773/52468975-4d668380-2b9b-11e9-818e-e71af1d5b49f.png)
+<img src="https://user-images.githubusercontent.com/27829773/52468975-4d668380-2b9b-11e9-818e-e71af1d5b49f.png" width="512">
+
+<br/><br/>
 
 ### Test1 (Optional) For Python Development
 ```
@@ -109,8 +111,9 @@ cv2.__version__
 
 **My screenshoot**
 
-![pythonsurum](https://user-images.githubusercontent.com/27829773/52469122-a209fe80-2b9b-11e9-9e7e-9760e40bd40b.png)
+<img src="https://user-images.githubusercontent.com/27829773/52469122-a209fe80-2b9b-11e9-9e7e-9760e40bd40b.png" width="512">
 
+<br/><br/>
 
 ### Test2 (Optional) For C++ Development
 *First download Source.cpp and lena.png from here, then create a project folder like FirstProject.*
@@ -140,8 +143,9 @@ It is OK.*
 
 **My screenshoot**
 
-![cppexample](https://user-images.githubusercontent.com/27829773/52469121-a1716800-2b9b-11e9-8ee9-30b2116990ec.png)
+<img src="https://user-images.githubusercontent.com/27829773/52469121-a1716800-2b9b-11e9-8ee9-30b2116990ec.png" width="512">
 
+<br/><br/>
 
 ### Test3 (Optional)
 ```
