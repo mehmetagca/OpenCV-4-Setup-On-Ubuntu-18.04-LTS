@@ -87,7 +87,8 @@ cv2.__version__
 
 
 #Test2 (Optional) For C++ Development
-#First download Source.cpp and lena.jpg from here, then create a project folder like FirstProject.
+#First download Source.cpp and lena.png from here, then create a project folder like FirstProject.
+mkdir FirstProject
 cd FirstProject
 #Move Source.cpp and lena.jpg to FirstProject folder, then create CMakeList.txt and write them to it:
 cmake_minimum_required(VERSION 3.1)
@@ -102,7 +103,7 @@ cmake ..
 make
 ./FirstProject
 
-#You should see lena.jpg if all of them is OK.
+#You should see lena.png if all of them is OK.
 #It is OK.
 
 
