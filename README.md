@@ -1,5 +1,5 @@
-# OpenCV-4-Setup-On-Ubuntu-18.04-LTS
-OpenCV 4 Alpha setup commands on Ubuntu 18.04 LTS
+# OpenCV-4-Setup-On-Ubuntu-18.04-LTS-With-Python-C++
+OpenCV 4 Alpha setup commands on Ubuntu 18.04 LTS for Python and C++.
 
 Note: The rows starting with the '#' character is the comment line that gives you information. Other rows is command and you should write them on your computer.
 
