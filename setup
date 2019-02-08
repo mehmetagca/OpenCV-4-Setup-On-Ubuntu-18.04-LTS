@@ -72,7 +72,7 @@ cd ~/.virtualenvs/cv/lib/python3.6/site-packages/
 ln -s /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.so cv2.so
 
 
-#Test1 (Optional)
+#Test1 (Optional) For Python Development
 cd ~
 workon cv
 python
@@ -86,10 +86,24 @@ cv2.__version__
 #It is OK. Press Ctrl+D to exit python.
 
 
-#Test2 (Optional)
-pkg-config --modversion opencv
-3.2.0
-#Do not worry, you will see version 4.0.1 on python coding. It is OK.
+#Test2 (Optional) For C++ Development
+#First download Source.cpp and lena.jpg from here, then create a project folder like FirstProject.
+cd FirstProject
+#Move Source.cpp and lena.jpg to FirstProject folder, then create CMakeList.txt and write them to it:
+cmake_minimum_required(VERSION 3.1)
+project( FirstProject )
+find_package( OpenCV REQUIRED )
+add_executable( FirstProject Source.cpp )
+target_link_libraries( FirstProject ${OpenCV_LIBS} )
+
+#Then;
+mkdir build && cd build
+cmake ..
+make
+./FirstProject
+
+#You should see lena.jpg if all of them is OK.
+#It is OK.
 
 
 #Test3 (Optional)
